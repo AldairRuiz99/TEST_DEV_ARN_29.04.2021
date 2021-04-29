@@ -1,0 +1,62 @@
+﻿@model TESTDTO.PersonaFisicaDTO
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="text-center">
+        <h1>Personas Físicas</h1>
+    </div>
+
+    <hr />
+    <form id="frmPersonaEditar">
+        <input name="urlTo" id="urlTo" type="hidden" value="@Url.Action("EditarPersona","PersonasFisicas")" />
+
+        <input name="idPersona" id="idPersona" type="hidden" value="@Model.IdPersonaFisica" )" />
+
+        <input name="urlRedirect" id="urlRedirect" type="hidden" value="@Url.Action("Index","PersonasFisicas")" />
+
+        <div class="nav-justified">
+            <div class="row justify-content-center">
+
+                <div class="form-group col-md-4">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Raul" value="@Model.Nombre">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="apaterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="apaterno" id="apaterno" placeholder="Salinas" value="@Model.ApellidoPaterno">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="amaterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="amaterno" id="amaterno" placeholder="Romero" value="@Model.ApellidoMaterno">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="rfc">RFC</label>
+                    <input type="text" class="form-control" name="rfc" id="rfc" placeholder="SARR8400108POP" value="@Model.RFC">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fechana">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" name="fechana" id="fechana" value="@Model.FechaNacimiento.ToString("yyyy-MM-dd")" >
+                </div>
+
+            </div>
+
+            <div class="row text-center">
+
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-primary"><i class="material-icons">save</i></button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<script src="~/Scripts/PersonaFisica/PersonasFisicas.js"></script>

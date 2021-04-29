@@ -1,0 +1,85 @@
+﻿@model List<TESTDTO.ClienteDTO>
+@using FRONT_WEB.Models
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Pages pager = new Pages();
+    int pageNo = 0;
+
+    if(ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<div class="container">
+
+    <div class="text-center">
+        <h1>Clientes</h1>
+        <a class="btn btn-primary" href="@Url.Action("GenerarExcel","Clientes")" role="button">Generar Excel</a>
+    </div>
+    <hr />
+
+    <div class="container col-12 table-responsive text-center">
+        <table class="table table-hover text-center">
+            <thead class="thead">
+                <tr>
+                    <th scope="col">IdCliente</th>
+                    <th scope="col">FechaRegistroEmpresa</th>
+                    <th scope="col">RazonSocial</th>
+                    <th scope="col">RFC</th>
+                    <th scope="col">Sucursal</th>
+                    <th scope="col">IdEmpleado</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Paterno</th>
+                    <th scope="col">Materno</th>
+                    <th scope="col">IdViaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@c.IdCliente</td>
+                        <td>@c.FechaRegistroEmpresa</td>
+                        <td>@c.RazonSocial</td>
+                        <td>@c.RFC</td>
+                        <td>@c.Sucursal</td>
+                        <td>@c.IdEmpleado</td>
+                        <td>@c.Nombre</td>
+                        <td>@c.Paterno</td>
+                        <td>@c.Materno</td>
+                        <td>@c.IdViaje</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+    <ul class="pagination justify-content-center">
+        @for (var id = pager.StartPage; id <= pager.EndPage; id++)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("Index","Clientes", new { id = @id })">@id</a>
+            </li>
+        }
+        @*<li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>*@
+    </ul>
+    }
+</div>
+
+<script src="~/Scripts/Clientes/Clientes.js"></script>

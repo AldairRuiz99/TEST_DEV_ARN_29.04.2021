@@ -1,0 +1,95 @@
+﻿@model List<TESTDTO.PersonaFisicaDTO>
+@{
+    ViewBag.Title = "Personas Físicas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="text-center">
+        <h1>Personas Físicas</h1>
+    </div>
+
+    <hr />
+    <form id="frmPersona">
+        <input name="urlTo" id="urlTo" type="hidden" value="@Url.Action("AgregarPersona","PersonasFisicas")" />
+
+        <div class="nav-justified">
+            <div class="row justify-content-center">
+
+                <div class="form-group col-md-4">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Raul">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="apaterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="apaterno" id="apaterno" placeholder="Salinas">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="amaterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="amaterno" id="amaterno" placeholder="Romero">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="rfc">RFC</label>
+                    <input type="text" class="form-control" name="rfc" id="rfc" placeholder="SARR8400108POP">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fechana">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" name="fechana" id="fechana">
+                </div>
+
+            </div>
+
+            <div class="row text-center">
+
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-primary"><i class="material-icons">save</i></button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<hr />
+
+<div class="container col-12 table-responsive text-center">
+    <table class="table table-hover text-center">
+        <thead class="thead">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">RFC</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Nombre</td>
+                    <td>@p.ApellidoPaterno</td>
+                    <td>@p.ApellidoMaterno</td>
+                    <td>@p.RFC</td>
+                    <td>@p.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+
+                    <td>
+                        <a href="@Url.Action("Editar","PersonasFisicas",new{id=p.IdPersonaFisica})" class="btn btn-warning"><i class="material-icons">edit</i></a>
+
+                        <button type="button" class="btn btn-danger" onclick="eliminar(@p.IdPersonaFisica, '@Url.Action("EliminarPersona","PersonasFisicas")')">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/Scripts/PersonaFisica/PersonasFisicas.js"></script>

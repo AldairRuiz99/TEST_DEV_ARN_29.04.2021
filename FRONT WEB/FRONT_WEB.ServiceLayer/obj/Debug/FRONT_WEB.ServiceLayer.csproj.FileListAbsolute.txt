@@ -1,0 +1,10 @@
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\FRONT_WEB.ServiceLayer.dll
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\FRONT_WEB.ServiceLayer.pdb
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\Newtonsoft.Json.dll
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\TESTDTO.dll
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\Newtonsoft.Json.xml
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\bin\Debug\TESTDTO.pdb
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\obj\Debug\FRONT_WEB.ServiceLayer.csproj.CoreCompileInputs.cache
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\obj\Debug\FRONT_WEB.ServiceLayer.csproj.CopyComplete
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\obj\Debug\FRONT_WEB.ServiceLayer.dll
+D:\TRABAJO\TOKA\PRUEBA\FRONT WEB\FRONT_WEB.ServiceLayer\obj\Debug\FRONT_WEB.ServiceLayer.pdb
